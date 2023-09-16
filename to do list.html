@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap" rel="stylesheet">
+  <style>
+
+
+
+  </style>
+        
+
+        
+
+</head>
+<body style="font-family: 'Edu SA Beginner', cursive;">
+    <h1>My To Do List</h1>
+   
+        <input type="text" placeholder="what do you want to do?" id="input2">
+        <button onclick="AddToList()">Add</button>
+   
+    <ul id="Bird">
+        <li>
+         read a story
+        </li>
+        <li>
+          wash my car
+        </li>
+        <li>
+            jump on the trampoline!!!!!!!!!!
+        </li>
+
+    
+    
+    
+    
+    </ul>
+
+<script>
+    function AddToList(){
+        var varibleli = document.createElement("li"); 
+        var input2value =document.getElementById("input2").value;
+        alert(input2value);
+        var vartext = document.createTextNode(input2value);
+        varibleli.appendChild(vartext); 
+        if(input2value ===""){
+            alert("You Have To Write Somthing :/");
+        } else   {
+            document.getElementById("Bird").appendChild(varibleli);
+        }
+        document.getElementById("input2").value ="";
+   }
+
+       
+</script>
+
+
+
+</body>
+
+</html>
