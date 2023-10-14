@@ -1,0 +1,13 @@
+body {background-color: rgb(228, 228, 228);font-family: 'Oswald', sans-serif;}
+.html {width:80%;margin:auto;}
+h1,h2 {text-align: center;}
+img{ width: 15%; height:15%; }
+.Captions {text-align: center; margin: auto;}
+table {width:50%;margin:auto;}
+tr { min-height: 100px;}
+.FOOD{display: block;margin-left: auto;margin-right: auto;}
+.Navigation {text-align: center;}
+.Navigation ul {list-style-type: none;padding: 0;}
+.Navigation ul li {display: inline; margin-right: 10px;}
+a {color: black;text-decoration: none;}
+a:hover {color: black; text-decoration: underline;}
