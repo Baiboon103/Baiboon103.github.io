@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Event</title>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    color: white;
+  }
+
+  #countdown {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  #timer {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+  
+  .timer-unit {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    display: block;
+  }
+
+</style>
+
+
+</head>
+<body>
+   
+    <div id="countdown">
+        <h1>My Birthday</h1>
+        <p id="timer">
+            <span id="days"></span>
+            <span class="timer-unit">Days</span>
+            <span id="hours"></span>
+            <span class="timer-unit">Hours</span>
+            <span id="minutes"></span>
+            <span class="timer-unit">Minutes</span>
+            <span id="seconds"></span>
+            <span class="timer-unit">Seconds</span>
+        </p>
+      </div> 
+    <script>
+        const CurrentDate = new Date ()
+        console.log (CurrentDate)
+        const EventDate = new Date ("2024-11-05T00:00:00")
+        console.log (EventDate)
+         const DifferenceInTime = EventDate - CurrentDate
+         console.log (DifferenceInTime)
+        function TimeUpdate () {
+            const CurrentDate = new Date ()
+            const DifferenceInTime = EventDate - CurrentDate
+            const days = Math.floor (DifferenceInTime / (1000 * 60 * 60 * 24) )
+            const hours = Math.floor ((DifferenceInTime % (1000 * 60 * 60 * 24)) / (1000*60*60)) 
+            const minutes = Math.floor ((DifferenceInTime % (1000*60*60))/ (1000*60)) 
+            const seconds = Math.floor ((DifferenceInTime % (1000*60))/ (1000))
+            document.getElementById ("days").innerText = days
+            document.getElementById ("hours").innerText = hours
+            document.getElementById ("minutes").innerText = minutes
+            document.getElementById ("seconds").innerText = seconds
+        }
+        const interval = setInterval(TimeUpdate, 1000);
+        if (DifferenceInTime < 0) {
+            clearInterval (interval)
+            document.getElementById ("timer").innerText = "EVENT HAS STARTED TOO BAD IF YOU ARE LATE!"
+        }
+    </script>
+
+
+</body>
+</html>
